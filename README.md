@@ -265,11 +265,7 @@ Good F1-score but poor Sharpe.
 
 ---
 
-Here you go ✅
-Below is **pure `README.md`–ready Markdown**, clean and copy-pasteable.
-No commentary, no emojis, no extra text — just documentation.
 
----
 
 
 ## How to Run This Project (Models, Tickers, Horizons)
