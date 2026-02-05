@@ -272,10 +272,9 @@ No commentary, no emojis, no extra text — just documentation.
 ---
 
 
-# ▶️ How to Run This Project (Models, Tickers, Horizons)
+## How to Run This Project (Models, Tickers, Horizons)
 
-This project is **not driven by a single `main.py` script**.  
-Instead, each Jupyter notebook runs the **entire pipeline end-to-end**, including:
+Each Jupyter notebook runs the **entire pipeline end-to-end**, including:
 
 - Data download  
 - Feature engineering  
