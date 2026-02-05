@@ -265,6 +265,117 @@ Good F1-score but poor Sharpe.
 
 ---
 
+Here you go ✅
+Below is **pure `README.md`–ready Markdown**, clean and copy-pasteable.
+No commentary, no emojis, no extra text — just documentation.
+
+---
+
+
+# ▶️ How to Run This Project (Models, Tickers, Horizons)
+
+This project is **not driven by a single `main.py` script**.  
+Instead, each Jupyter notebook runs the **entire pipeline end-to-end**, including:
+
+- Data download  
+- Feature engineering  
+- Model training  
+- Walk-forward validation  
+- Backtesting  
+- Performance evaluation  
+
+---
+
+## 📁 Entry Points
+
+The two main execution entry points are:
+
+- `Logistic_regression.ipynb`
+- `XGBoost.ipynb`
+
+Each notebook is **self-contained** and can be run independently.
+
+---
+
+## ⚙️ Configurable Parameters
+
+At the **top of each notebook**, key parameters are defined.  
+These control the **ticker**, **model behavior**, and **prediction horizon**.
+
+---
+
+###  Ticker Selection
+
+You can change the stock ticker by modifying:
+
+```python
+TICKER = "RELIANCE.NS"
+````
+
+Examples:
+
+```python
+TICKER = "HDFCBANK.NS"
+TICKER = "INFY.NS"
+TICKER = "AAPL"
+TICKER = "MSFT"
+```
+
+Any ticker supported by **Yahoo Finance (`yfinance`)** will work.
+
+---
+
+###  Prediction Horizon (Forward Days)
+
+The directional target is defined as:
+
+> **Close[t + HORIZON] > Close[t]**
+
+Change the horizon here:
+
+```python
+HORIZON = 15  # number of trading days ahead
+```
+
+Examples:
+
+```python
+HORIZON = 5    # short-term
+HORIZON = 10
+HORIZON = 30   # medium-term
+```
+
+**Notes:**
+
+* Larger horizons reduce the available sample size
+* Very small horizons (1–3 days) increase noise
+* The last `HORIZON` rows are automatically dropped to avoid lookahead bias
+
+---
+
+###  Model Choice
+
+There is **no model switch inside a single notebook**.
+
+Instead:
+
+* `Logistic_regression.ipynb` → Logistic Regression pipeline
+* `XGBoost.ipynb` → XGBoost pipeline
+
+To compare models:
+
+* Run **both notebooks**
+* Results are saved separately and later consolidated into `model_comparison.csv`
+
+---
+
+
+
+
+
+
+
+
 ## 14. Conclusion
 
 This project demonstrates a **production-grade, time-series aware ML pipeline** for financial prediction with:
